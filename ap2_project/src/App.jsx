@@ -1,20 +1,23 @@
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Header from './components/header/Header';
-import CardList from './components/Cards/CardsList.jsx'; 
-
+import Header from './components/Header/Header.jsx';
+import CardList from './components/CardList/CardsList.jsx'; 
+import Location from './components/Location/Location.jsx'
 
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-      <Header />
-      <h1>Seja bem vindo a nossa AP2</h1>
-      <CardList />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/location" element={<Location />} />
+          <Route path="/cards" element={<CardList />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

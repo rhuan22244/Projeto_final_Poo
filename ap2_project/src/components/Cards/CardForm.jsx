@@ -50,8 +50,8 @@ const CardForm = ({ addCard }) => {
       />
       <div>
         <label>Você é egresso ou convidado?</label>
-        <div className='d-flex flex-column justify-content-between align-items-center '>
-          <label className='d-inline-flex mx-auto justify-content-around'>
+        <div className='radio-group'>
+          <label>
             <input
               type="radio"
               name="question1"
@@ -60,9 +60,9 @@ const CardForm = ({ addCard }) => {
               onChange={handleChange}
               required 
             />
-            <p className='text-justify'>Egresso</p>
+            Egresso
           </label>
-          <label className='d-inline-flex mx-auto'>
+          <label>
             <input
               type="radio"
               name="question1"
@@ -71,13 +71,13 @@ const CardForm = ({ addCard }) => {
               onChange={handleChange}
               required 
             />
-            <p className='text-justify'>Convidado</p>
+            Convidado
           </label>
         </div>
       </div>
       <div>
         <label>Já está pago?</label>
-        <div>
+        <div className='radio-group'>
           <label>
             <input
               type="radio"
@@ -116,5 +116,7 @@ const CardForm = ({ addCard }) => {
 };
 
 export default CardForm;
+
+
 
 
